@@ -6,12 +6,12 @@ export interface Props extends HTMLAttributes<HTMLButtonElement> {
   type?: "button" | "submit" | "reset";
   color?: "primary" | "black" | "white";
   variant?: "solid" | "outline";
-  disabled: boolean;
+  disabled?: boolean;
   isLoading?: boolean;
 }
 
 export const Button = forwardRef<HTMLButtonElement, Props>(function Button(
-  { type = "button", color = "primary", variant = "solid", disabled, isLoading, children, className, ...props },
+  { type = "button", color = "primary", variant = "solid", disabled = false, isLoading, children, className, ...props },
   ref
 ) {
   return (

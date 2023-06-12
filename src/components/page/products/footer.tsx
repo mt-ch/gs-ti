@@ -10,7 +10,7 @@ const ProductsFooter = ({ numberOfResults, visibleResults }: Props) => {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex justify-end">
-        <p className="text-sm tracking-tight text-gray-500">
+        <p className="text-sm  text-gray-500">
           Viewing 1 - {visibleResults} of {numberOfResults} products
         </p>
       </div>

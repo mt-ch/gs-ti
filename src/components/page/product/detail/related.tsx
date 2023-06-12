@@ -11,7 +11,7 @@ export interface Props {
 export const ProductDetailRelated = ({ products }: Props) => {
   return (
     <section aria-labelledby="recomended-products">
-      <h2 id="recomended-products" className="text-xl font-bold tracking-tight leading-tight uppercase text-gray-900">
+      <h2 id="recomended-products" className="text-xl font-bold  leading-tight uppercase text-gray-900">
         Recomended
       </h2>
 
