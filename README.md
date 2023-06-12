@@ -18,4 +18,4 @@ npm run dev
 
 ## Live demo site
 
-The demo site can be found here:
+The demo site can be found here: https://statuesque-brigadeiros-725b40.netlify.app/products/
