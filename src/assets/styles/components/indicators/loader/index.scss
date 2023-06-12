@@ -1,0 +1,15 @@
+.gs-loader {
+  @apply block relative cursor-none;
+
+  &.-size--small {
+    @apply w-5 h-5;
+  }
+
+  &.-size--medium {
+    @apply w-8 h-8;
+  }
+
+  &.-size--large {
+    @apply w-12 h-12;
+  }
+}
