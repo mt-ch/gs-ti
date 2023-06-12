@@ -4,13 +4,13 @@ import { ProductDetailPageProps } from "@/utils/pages/products";
 
 export const getAllProducts = async (): Promise<Product[]> => {
   // Simulate loading
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  // await new Promise((resolve) => setTimeout(resolve, 2000));
   return products;
 };
 
 export const getProductById = async (id: number): Promise<ProductDetailPageProps | null> => {
   // Simulate loading
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  // await new Promise((resolve) => setTimeout(resolve, 2000));
   const product = products.find((product) => product.id === id) || null;
   const recommended = getRecomendedProducts(products, 4, product);
 

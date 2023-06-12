@@ -1,6 +1,6 @@
 import React from "react";
 // Stores
-import { useProductsStore } from "@/stores/products";
+import { UseProductsStore } from "@/stores/products";
 // Components
 import Button from "@/components/application/actions/button";
 
@@ -9,13 +9,13 @@ export interface Props {
 }
 
 const ProductsActionsLoadMore = ({ numberOfResults }: Props) => {
-  const { visibleItems, loadMoreItems } = useProductsStore();
+  const { visibleProducts, loadMoreProducts } = UseProductsStore();
 
-  if (visibleItems < numberOfResults)
+  if (visibleProducts < numberOfResults)
     return (
       <div className="flex justify-center">
         <div>
-          <Button type="button" color="black" variant="solid" onClick={loadMoreItems}>
+          <Button type="button" color="black" variant="solid" onClick={loadMoreProducts}>
             Load more
           </Button>
         </div>

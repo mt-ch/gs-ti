@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 // Stores
-import { useProductsStore } from "@/stores/products";
+import { UseProductsStore } from "@/stores/products";
 // Utils
 import { getAllProducts } from "@/utils/api/products/products";
 // Types
@@ -13,7 +13,7 @@ import ProductsHeader from "@/components/page/products/header";
 import ProductsFooter from "@/components/page/products/footer";
 
 const ProductsPage: NextPage<ProductsPageProps> = ({ products }) => {
-  const { visibleItems } = useProductsStore();
+  const { visibleProducts } = UseProductsStore();
   const headerData = {
     heading: "All Products",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta facilis assumenda natus at nobis, dolores voluptatem tempora, id a unde voluptatum beatae consequuntur temporibus, labore voluptate error eius repellat non!",
@@ -28,12 +28,12 @@ const ProductsPage: NextPage<ProductsPageProps> = ({ products }) => {
           <PromoShipping />
           {/* Products */}
           <div className="grid grid-cols-2 gap-x-4 gap-y-6 lg:grid-cols-4 xl:gap-x-8">
-            {products.slice(0, visibleItems).map((product: Product) => (
+            {products.slice(0, visibleProducts).map((product: Product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
           {/* Footer */}
-          <ProductsFooter visibleResults={visibleItems} numberOfResults={products.length} />
+          <ProductsFooter visibleResults={visibleProducts} numberOfResults={products.length} />
         </div>
       </div>
     </div>

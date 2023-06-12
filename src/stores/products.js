@@ -1,8 +1,10 @@
 import create from "zustand";
 
-export const useProductsStore = create((set) => ({
+export const UseProductsStore = create((set) => ({
+  products: [],
+  setProducts: (payload) => set((state) => ({ products: payload })),
   isLoading: false,
   setLoading: (payload) => set((state) => ({ isLoading: payload })),
-  visibleItems: 20,
-  loadMoreItems: () => set((state) => ({ visibleItems: state.visibleItems + 20 })),
+  visibleProducts: 20,
+  loadMoreProducts: () => set((state) => ({ visibleProducts: state.visibleProducts + 20 })),
 }));
