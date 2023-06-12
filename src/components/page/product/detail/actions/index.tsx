@@ -10,10 +10,12 @@ export interface Props {
 }
 
 export const ProductDetailActions = ({ product, isLoading }: Props) => {
+  const soldOut = product.availableSizes.every((item) => !item.inStock);
+
   return (
     <div className="flex flex-col gap-4">
       <ProductActionsSize availableSizes={product.availableSizes} />
-      <ProductActionsAddToCart />
+      <ProductActionsAddToCart soldOut={soldOut} />
     </div>
   );
 };

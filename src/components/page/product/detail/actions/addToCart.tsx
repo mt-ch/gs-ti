@@ -3,8 +3,11 @@ import React, { useState } from "react";
 import Button from "@/components/application/actions/button";
 // Stores
 import { useProductStore } from "@/stores/product";
+export interface Props {
+  soldOut: boolean;
+}
 
-export const ProductActionsAddToCart: React.FC = () => {
+export const ProductActionsAddToCart: React.FC<Props> = ({soldOut}) => {
   const [loading, setLoading] = useState(false);
   const { selectedSize } = useProductStore();
   const handleAddToCart = () => {
@@ -18,8 +21,8 @@ export const ProductActionsAddToCart: React.FC = () => {
   };
   return (
     <form action="#" method="POST" onSubmit={handleAddToCart}>
-      <Button type="submit" color="primary" variant="solid" isLoading={loading} disabled={selectedSize === null}>
-        Add to cart
+      <Button type="submit" color="primary" variant="solid" isLoading={loading} disabled={selectedSize === null || soldOut}>
+        {!soldOut ? "Add to cart" : "Sold out"}  
       </Button>
     </form>
   );

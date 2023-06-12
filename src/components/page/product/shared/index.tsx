@@ -12,14 +12,16 @@ export interface Props {
 }
 
 export const ProductCard = ({ product }: Props) => {
+  const soldOut = product.availableSizes.every((item) => !item.inStock);
+
   return (
-    <div key={product.id} className="group relative">
+    <div key={product.id} className={`group relative ${soldOut ? "opacity-50" : null}`}>
       <div className="relative overflow-hidden">
         <div className="relative aspect-[1692/2018] w-full bg-gray-200">
           <Image src={product.featuredMedia.src} alt="Description of the image" className="gs-img -lazyloaded" fill loading="lazy" />
         </div>
         {/* Sizes */}
-        <ProductCardSizeOverlay sizeInStock={product.sizeInStock} />
+        {!soldOut ? <ProductCardSizeOverlay sizeInStock={product.sizeInStock} /> : null}
       </div>
 
       <div className="mt-2">
